@@ -1,19 +1,10 @@
-// import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
-
-// // Apollo Client Setup
-// const client = new ApolloClient({
-//   cache: new InMemoryCache(),
-// });
-
-
 import { ApolloClient, InMemoryCache , gql} from '@apollo/client';
 
 const cache = new InMemoryCache();
 
 const client = new ApolloClient({
-  // Provide required constructor fields
   cache: cache,
-  uri: 'http://localhost:9200/graphql', // Update with your GraphQL server URL if needed
+  uri: 'http://localhost:9200/graphql', 
 
   name: 'react-web-client',
   version: '1.3',
@@ -66,7 +57,7 @@ export const GET_PERSON_WITH_CARS = gql`
   }
 `;
 
-// GraphQL Mutations
+
 export const ADD_PERSON = gql`
   mutation AddPerson($firstName: String!, $lastName: String!) {
     addPerson(firstName: $firstName, lastName: $lastName) {

@@ -120,5 +120,4 @@ export const DELETE_CAR = gql`
   }
 `;
 
-// Exporting Apollo Client
 export default client;

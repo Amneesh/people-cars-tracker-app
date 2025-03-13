@@ -5,7 +5,7 @@ import {
   GET_PEOPLE,
   UPDATE_CAR,
   GET_CARS,
-  UPDATE_PERSON, // Assuming you have an UPDATE_PERSON mutation
+  UPDATE_PERSON,
 } from "../apolloClient";
 import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";

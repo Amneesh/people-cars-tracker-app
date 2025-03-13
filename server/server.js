@@ -160,7 +160,7 @@ const resolvers = {
   Mutation: {
     addPerson: (_, { firstName, lastName }) => {
       console.log(`Received add request for person with name: ${firstName}`);
-      const newPerson = { id: uuidv4(), firstName, lastName }; // ✅ Use uuid
+      const newPerson = { id: uuidv4(), firstName, lastName }; 
       people.push(newPerson);
       return newPerson;
     },
@@ -210,7 +210,6 @@ const resolvers = {
   },
 };
 
-// Start server
 const app = express();
 app.use(cors());
 

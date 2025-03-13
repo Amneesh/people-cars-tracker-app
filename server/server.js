@@ -97,7 +97,7 @@ let cars = [
   ];
   
 
-// GraphQL Schema
+
 const typeDefs = gql`
   type Person {
     id: ID!
@@ -146,9 +146,6 @@ const typeDefs = gql`
   }
 `;
 
-// Mutable people and cars arrays
-
-// Resolvers
 const resolvers = {
   Query: {
     people: () => people,
@@ -182,14 +179,13 @@ const resolvers = {
       }
       const deletedPerson = people.splice(personIndex, 1)[0];
       console.log(deletedPerson, '>>>>>>>>>>>>>>>>');
-      //people = people.filter((p) => p.id !== id); // ✅ Remove person
-      cars = cars.filter(car => car.personId !== id); // ✅ Remove their cars
+      cars = cars.filter(car => car.personId !== id);
       console.log('person deleted');
       return deletedPerson;
     },
     addCar: (_, { year, make, model, price, personId }) => {
       console.log("Adding car:", { year, make, model, price, personId });
-      const newCar = { id: uuidv4(), year, make, model, price, personId }; // ✅ Use uuid
+      const newCar = { id: uuidv4(), year, make, model, price, personId }; 
       cars.push(newCar);
       return newCar;
     },
@@ -209,7 +205,7 @@ const resolvers = {
     deleteCar: (_, { id }) => {
       const carIndex = cars.findIndex((car) => car.id === id);
       if (carIndex === -1) return null;
-      return cars.splice(carIndex, 1)[0]; // ✅ Return deleted car
+      return cars.splice(carIndex, 1)[0]; 
     },
   },
 };
